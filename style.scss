@@ -2,113 +2,102 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    border: none;
-    outline: none;
+    list-style: none;
     text-decoration: none;
+    text-transform: capitalize;
     transition: .2s linear;
     -webkit-transition: .2s linear;
     -moz-transition: .2s linear;
     -ms-transition: .2s linear;
     -o-transition: .2s linear;
-    text-transform: capitalize;
-    list-style: none;
+    border: none;
+    outline: none;
+}
+body{
     font-family: sans-serif;
 }
 html{
     font-size: 62.5%;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
+    @media (max-width: 991px) {
+        font-size: 55%;
+    }
+    @media (max-width: 450px){
+        font-size: 50%;
+    }
+}
+.header{
+    padding: 2rem 9%;    
+    h1{
+        text-align: center;
+        font-size:5rem;
+        font-weight: 700;
+        i{
+            color: #ff2052;
+        }
+        span{
+            color: #ff2052;
+        }
+    }
 }
 
-.header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2rem 9%;
-    background-color: #e49969;
-    align-items: center;
-    h1{
-        color: #fff;
-        font-size: 3.5rem;
-        text-transform: uppercase;
-        text-shadow: 0 .3rem 1.8rem rgba(53, 29, 189, 0.15);
+#formId{
+    margin-top: 3rem;
+    .form-item{
+        margin-top: 2rem;
+        label{
+            display: block;
+            font-size: 2rem;
+            font-weight: bolder;
+        }
+        input{
+            display: block;
+            margin-top: 1rem;
+            padding: .8rem;
+            width: 100%;
+            border-radius: .5rem;
+            -webkit-border-radius: .5rem;
+            -moz-border-radius: .5rem;
+            -ms-border-radius: .5rem;
+            -o-border-radius: .5rem;
+            border: 1px solid #3f1d24;
+            font-size: 1.6rem;
+            
+}
+
+
     }
-    input{
-        padding: 1rem .5rem;
+    input[type = submit]{
+        margin-top: 5rem;
+        display: block;
+        background: #ff2052;
+        width: 100%;
+        padding: .8rem;
         border-radius: .5rem;
         -webkit-border-radius: .5rem;
         -moz-border-radius: .5rem;
         -ms-border-radius: .5rem;
         -o-border-radius: .5rem;
-        font-size: 1.6rem;
-        box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
-        color: #91867e;
+        cursor: pointer;
+        font-size: 2rem;
+        color: #fff;
 }
 }
 
-.containerBox{
-    width: 80%;
-    margin: auto;
-    border: .1rem solid #ddd;
-    padding: 2rem;
-    margin-top: 5rem;
-    h3{
-        font-size: 2.5rem;
-        margin-bottom: 1rem;        
-    }
-    #form-id{
-        display: flex;
-        align-items: center;
-        input{
-            border: .1rem solid #91867e;
-            padding: .5rem;              
-            border-radius: .5rem;
-            -webkit-border-radius: .5rem;
-            -moz-border-radius: .5rem;
-            -ms-border-radius: .5rem;
-            -o-border-radius: .5rem;      
-        }
-        input[type='submit']{
-            background: #212930;
-            color: #fff;
-            margin-left: 1rem;
-            padding: .5rem 1rem;
-            font-size: 1.5rem;
-            cursor: pointer;
-}
-    }
-    .items{
-        h4{
+#tables{
+    padding: 2rem 9%;
+
+    table{
+        th{
             font-size: 2rem;
-            margin-top: 2rem;
-            margin-bottom: 1rem;
         }
-        #users{
-            li{
-                font-size: 2rem;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                border: .1rem solid #e49969;
-                padding: 1rem;
-                border-radius: .5rem;
-                -webkit-border-radius: .5rem;
-                -moz-border-radius: .5rem;
-                -ms-border-radius: .5rem;
-                -o-border-radius: .5rem;
-                margin-top: 1rem;
-                i{
-                    background: #91867e;
-                    padding: .5rem 1rem;
-                    border-radius: .5rem;
-                    -webkit-border-radius: .5rem;
-                    -moz-border-radius: .5rem;
-                    -ms-border-radius: .5rem;
-                    -o-border-radius: .5rem;
-                    cursor: pointer;
-                    color: #fff;
-}
-}
+        td{
+            font-size: 1.6rem;
         }
     }
+
+}
+
+.fieldset{
+    border: 2px solid #ccc;
+    padding: 1rem;
 }

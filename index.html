@@ -1,34 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="fontawesome/css/all.css">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="fontawesome/css/all.css">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <header class="header">
-    <h1>Item Lister</h1>
-    <input type="text" placeholder="Search Items..." id="filter">
-  </header>
-  <div class="containerBox">
-    <h3>Add Items</h3>
-    <form id="form-id">
-      <input type="text" id="itemsValue">
-      <input type="submit" value="submit">
-    </form>
-    <div class="items">
-      <h4>item</h4>
-      <ul id="users">
-        
-      </ul>
-    </div>
+  <div class="header">
+    <h1><i class="fas fa-book-open"></i> My<span>Book</span>List</h1>
   </div>
+  <div class="container">
+
+
+
+    <form id="formId">
+      <div class="form-item">
+        <label for="title">Title</label>
+        <input type="text" id="title" class="form-control">
+      </div>
+      <div class="form-item">
+        <label for="author">Author</label>
+        <input type="text" id="author" class="form-control">
+      </div>
+      <div class="form-item">
+        <label for="email">Email</label>
+        <input type="email" id="email" class="form-control">
+      </div>
+      <input type="submit" value="Submit" id="submit">
+    </form>
+  </div>
+  <div id="tables">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Email</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="book-list">
+
+      </tbody>
+    </table>
+  </div>
+
   
- 
-    
-    <script src="index.js"></script>
+
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+  <script src="index.js"></script>
 </body>
+
 </html>
