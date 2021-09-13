@@ -109,8 +109,8 @@ html {
   font-size: 1.6rem;
 }
 
-.fieldset {
-  border: 2px solid #ccc;
-  padding: 1rem;
+#tables table td i {
+  cursor: pointer;
+  color: #1b0233;
 }
 /*# sourceMappingURL=style.css.map */

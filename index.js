@@ -1,87 +1,116 @@
-// Book Class: Represents a Book
+
+const formId = document.querySelector('#formId')
+const title = document.querySelector('#title')
+const author = document.querySelector('#author')
+const email = document.querySelector('#email')
+const bookList = document.querySelector('#book-list')
+const container = document.querySelector('.container')
+
 class Book {
-    constructor(title, author, email){
+    constructor(title, author, email) {
         this.title = title,
-        this.author = author,
-        this.email = email
+            this.author = author,
+            this.email = email
     }
 }
 
-// UI Class: Handles Storage
-
-
-// Store Class: Handles Storage
-
-// Event: Display Books
 class UI {
-    static displayBooks(){
-      
-        const books = StoredBook()
-        books.forEach((book) => UI.addBookToList(book))
+    static displayBooks() {
+      const Books = Store.getBooks()
+      Books.forEach((book) => UI.addToListBooks(book)) 
     }
-    static alerts(massage, className){
-        const div = document.createElement('div') 
+    static addToListBooks(books) {
+        const row = document.createElement('tr')
+        row.innerHTML = `
+            <td>${books.title}</td>
+            <td>${books.author}</td>
+            <td>${books.email}</td>
+            <td><i class="fas fa-times delete"></i></td>
+        `
+        bookList.appendChild(row)
+
+    }
+    static alert(massage, className){
+        const div = document.createElement('div')
         div.className = `alert alert-${className}`
         div.appendChild(document.createTextNode(massage))
-        const formId = document.querySelector('#formId')
-        const container = document.querySelector('.container')
         container.insertBefore(div, formId)
-
         setTimeout(() => {
             const alert = document.querySelector('.alert')
             alert.remove()
-            
-        }, 3000)
+        }, 2000)
     }
-    static addBookToList(book){
-        const booked = document.querySelector('#book-list')
-        const row = document.createElement('tr')
-        row.innerHTML = `
-            <td>${book.title}</td>
-            <td>${book.author}</td>
-            <td>${book.email}</td>
-            <td><a href="#" class="btn btn-danger btn-sm delete">X</a></td>
-        `
-        booked.appendChild(row)
+    static clearForm(){
+        title.value = ''  
+        author.value = ''  
+        email.value = ''  
     }
-    static clearFields(){
-        document.querySelector('#title').value = ''
-    document.querySelector('#author').value = ''
-    document.querySelector('#email').value = ''
-    }
-    static deleteBook(el){
+    static removeItem(el){
         if(el.classList.contains('delete')){
             el.parentElement.parentElement.remove()
         }
     }
 }
 
-
 document.addEventListener('DOMContentLoaded', UI.displayBooks)
 
 
-// Event: add a Book
-const formId = document.querySelector('#formId')
+// Storage Books
+
+class Store{
+    static getBooks(){
+        let books;
+        if(localStorage.getItem('books') === null){
+            books = []
+        }else{
+            books = JSON.parse(localStorage.getItem('books'))
+        }
+        return books
+    }
+    static addStoreBook(book){
+        const booksed = Store.getBooks()
+        booksed.push(book)
+        localStorage.setItem('books', JSON.stringify(booksed))
+    }
+    static removeItems(email){
+        const books = Store.getBooks()
+        books.forEach((book, index) => {            
+          if(book.email === email){
+            books.splice(index, 1)
+          }
+           
+        })
+        localStorage.setItem('books', JSON.stringify(books))
+    }
+}
+
+
+
 formId.addEventListener('submit', (e) => {
     e.preventDefault()
-    const title = document.querySelector('#title').value
-    const author = document.querySelector('#author').value
-    const email = document.querySelector('#email').value
-    if(title == '' || author == ''|| email == ''){
-        UI.alerts('Please Full Fill', 'danger fs-4')
+    const titleValue = title.value
+    const authorValue = author.value
+    const emailValue = email.value
+    if (titleValue && authorValue && emailValue) {
+        const books = new Book(titleValue, authorValue, emailValue)
+        UI.addToListBooks(books)
+       Store.addStoreBook(books)       
+        UI.alert('Book List Success', 'success')
+        UI.clearForm()
     }else{
-        UI.alerts('Add Book Success', 'primary fs-4')
-        const book = new Book(title, author, email)
-    UI.addBookToList(book)
-    UI.clearFields()
-    
+        UI.alert('Please full fill up', 'danger')
     }
 })
 
-// Event: Remove a Book
-document.querySelector('#book-list').addEventListener('click', (e) => {
-    UI.deleteBook(e.target)
-    UI.alerts('Book Removed', 'success fs-4')
+bookList.addEventListener('click', (e) => {
+    const el = e.target
+    UI.removeItem(el)
+    Store.removeItems(e.target.parentElement.previousElementSibling.textContent)
+    UI.alert('Item Remove', 'warning')
 })
+
+
+
+
 
 

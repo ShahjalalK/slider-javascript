@@ -92,12 +92,12 @@ html{
         }
         td{
             font-size: 1.6rem;
+            i{
+                cursor: pointer;
+                color: rgb(27, 2, 51);
+            }
         }
     }
 
 }
 
-.fieldset{
-    border: 2px solid #ccc;
-    padding: 1rem;
-}
