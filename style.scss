@@ -25,6 +25,9 @@ html{
         font-size: 50%;
     }
 }
+a{
+    text-decoration: none;
+}
 .header{
     padding: 2rem 9%;    
     h1{
@@ -35,69 +38,8 @@ html{
             color: #ff2052;
         }
         span{
-            color: #ff2052;
+            color: #C70039;
         }
     }
-}
-
-#formId{
-    margin-top: 3rem;
-    .form-item{
-        margin-top: 2rem;
-        label{
-            display: block;
-            font-size: 2rem;
-            font-weight: bolder;
-        }
-        input{
-            display: block;
-            margin-top: 1rem;
-            padding: .8rem;
-            width: 100%;
-            border-radius: .5rem;
-            -webkit-border-radius: .5rem;
-            -moz-border-radius: .5rem;
-            -ms-border-radius: .5rem;
-            -o-border-radius: .5rem;
-            border: 1px solid #3f1d24;
-            font-size: 1.6rem;
-            
-}
-
-
-    }
-    input[type = submit]{
-        margin-top: 5rem;
-        display: block;
-        background: #ff2052;
-        width: 100%;
-        padding: .8rem;
-        border-radius: .5rem;
-        -webkit-border-radius: .5rem;
-        -moz-border-radius: .5rem;
-        -ms-border-radius: .5rem;
-        -o-border-radius: .5rem;
-        cursor: pointer;
-        font-size: 2rem;
-        color: #fff;
-}
-}
-
-#tables{
-    padding: 2rem 9%;
-
-    table{
-        th{
-            font-size: 2rem;
-        }
-        td{
-            font-size: 1.6rem;
-            i{
-                cursor: pointer;
-                color: rgb(27, 2, 51);
-            }
-        }
-    }
-
 }
 

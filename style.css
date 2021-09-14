@@ -35,6 +35,10 @@ html {
   }
 }
 
+a {
+  text-decoration: none;
+}
+
 .header {
   padding: 2rem 9%;
 }
@@ -50,67 +54,6 @@ html {
 }
 
 .header h1 span {
-  color: #ff2052;
-}
-
-#formId {
-  margin-top: 3rem;
-}
-
-#formId .form-item {
-  margin-top: 2rem;
-}
-
-#formId .form-item label {
-  display: block;
-  font-size: 2rem;
-  font-weight: bolder;
-}
-
-#formId .form-item input {
-  display: block;
-  margin-top: 1rem;
-  padding: .8rem;
-  width: 100%;
-  border-radius: .5rem;
-  -webkit-border-radius: .5rem;
-  -moz-border-radius: .5rem;
-  -ms-border-radius: .5rem;
-  -o-border-radius: .5rem;
-  border: 1px solid #3f1d24;
-  font-size: 1.6rem;
-}
-
-#formId input[type=submit] {
-  margin-top: 5rem;
-  display: block;
-  background: #ff2052;
-  width: 100%;
-  padding: .8rem;
-  border-radius: .5rem;
-  -webkit-border-radius: .5rem;
-  -moz-border-radius: .5rem;
-  -ms-border-radius: .5rem;
-  -o-border-radius: .5rem;
-  cursor: pointer;
-  font-size: 2rem;
-  color: #fff;
-}
-
-#tables {
-  padding: 2rem 9%;
-}
-
-#tables table th {
-  font-size: 2rem;
-}
-
-#tables table td {
-  font-size: 1.6rem;
-}
-
-#tables table td i {
-  cursor: pointer;
-  color: #1b0233;
+  color: #C70039;
 }
 /*# sourceMappingURL=style.css.map */
