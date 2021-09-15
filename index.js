@@ -1,22 +1,23 @@
-const textInput = document.getElementById('textInput')
+const loadText = document.querySelector('.loading-text')
+const bg = document.querySelector('.bg')
 
-class Search{
-    static filter(){
-        const text = textInput.value.toUpperCase()
-        const listGroup = document.querySelector('.list-group')
-        const li = listGroup.querySelectorAll('li.list-group-item')
-        Array.from(li).forEach((item) => {
-            const items = item.firstChild.textContent
-           if(items.toUpperCase().indexOf(text) != -1){
-               item.style.display = 'block'
-           }else{
-            item.style.display = 'none'
-           }
-            
-        })
+let load = 0
+
+class Loading{
+    static blurring(){
+        load++ 
+        if(load > 90){
+            clearInterval(int)
+        }
+        
+        loadText.innerHTML = `${load}%`
+        loadText.style.opacity = scale(load, 0, 100, 1, 0)
+        bg.style.filter = `blur(${scale(load, 0, 100, 30, 0)}px)`
     }
 }
 
-textInput.addEventListener('keyup', () => {
-    Search.filter()
-})
+const scale = (num, in_min, in_max, out_min, out_max) => {
+    return ((num - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min
+}
+const int =  setInterval(Loading.blurring, 30);
+

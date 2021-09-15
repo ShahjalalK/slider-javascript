@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu");
 * {
   margin: 0;
   padding: 0;
@@ -39,21 +40,41 @@ a {
   text-decoration: none;
 }
 
-.header {
-  padding: 2rem 9%;
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  font-family: 'Ubuntu', sans-serif;
+  position: relative;
 }
 
-.header h1 {
-  text-align: center;
-  font-size: 5rem;
+.bg {
+  background: url("https://images.unsplash.com/photo-1599161392051-17effc81db4c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=752&q=80") no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: calc(100vh + 60px);
+  width: calc(100vw + 60px);
+  position: absolute;
+  top: -30;
+  left: -30;
+  z-index: 1;
+  -webkit-filter: blur(0px);
+          filter: blur(0px);
+}
+
+.loading-text {
+  z-index: 2;
+  font-size: 3.5rem;
+  color: #fff;
   font-weight: 700;
-}
-
-.header h1 i {
-  color: #ff2052;
-}
-
-.header h1 span {
-  color: #C70039;
 }
 /*# sourceMappingURL=style.css.map */
