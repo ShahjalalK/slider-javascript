@@ -13,4 +13,8 @@
   -ms-transition: 0.2s linear;
   -o-transition: 0.2s linear;
 }
+
+.delete {
+  cursor: pointer;
+}
 /*# sourceMappingURL=style.css.map */
