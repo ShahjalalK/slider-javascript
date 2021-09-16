@@ -12,41 +12,48 @@
 </head>
 
 <body>
-<header><h1 class="fs-1 text-center fw-bolder"><i class="fas fa-book-open text-danger"></i> List Book App</h1></header>
+    <div class="wapper">
+      <div class="slider-container">
+        <div class="left-slide">
+          <div style="background-color: #fd3555;">
+            <h1>Nature flower</h1>
+            <p>all in pink</p>
+          </div>
+          <div style="background-color: #2ab6ba;">
+            <h1>Bluuue sky</h1>
+            <p>with it's mountains</p>
+          </div>
+          <div style="background-color: #252e33;">
+            <h1>Lonnly castle</h1>
+            <p>in the wilderness</p>
+          </div>
+          <div style="background-color: #ffb866;">
+            <h1>Flying eagle</h1>
+            <p>in the sunset</p>
+          </div>
+        </div>
+        <div class="right-slide">
+          <div style="background-image: url(https://images.unsplash.com/photo-1628191081676-8f40d4ce6c44?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80);"></div>
+          <div style="background-image: url(https://images.unsplash.com/photo-1631535074344-5def16b71e70?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80);"></div>
+          <div style="background-image: url(https://images.unsplash.com/photo-1631539161681-5b947b1524d7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80);"></div>
+          <div style="background-image: url(https://images.unsplash.com/photo-1631756964162-25c8c07579b5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80);"></div>
+        </div>
 
-<div class="container">
-  <form id="formId" class="form">
-    <label for="title">Title</label>
-    <input type="text" id="title" class="form-control mb-3">
-    <label for="author">Author</label>
-    <input type="text" id="author" class="form-control mb-3">
-    <label for="email">Email</label>
-    <input type="text" id="email" class="form-control">
-    <input type="submit" value="Insert" class="form-control bg-danger text-light fs-5 mt-3">
-  </form>
-</div>
-
-<div id="listed" class="mt-5">
-  <div class="container">  
-    <table class="table table-dark table-striped">
-      <thead>
-        <tr>
-          <th>Title</th>
-          <th>Author</th>
-          <th>Email</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody id="addFile">
-       
-      </tbody>
-    </table>
-  </div>
-</div>
-    
-
-   
+        <div class="action-buttons">
+          <button class="douwn-button">
+            <i class="fas fa-arrow-down"></i>
+          </button>
+          <button class="up-button">
+            <i class="fas fa-arrow-up"></i>
+          </button>
+        </div>
   
+      </div>
+      
+    </div>
+    </div>
+
+
 
   <script src="bootstrap/js/bootstrap.min.js"></script>
   <script src="index.js"></script>

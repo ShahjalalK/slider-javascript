@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans');
+
 *{
     margin: 0;
     padding: 0;
@@ -12,7 +14,95 @@
     -ms-transition: 0.2s linear;
     -o-transition: 0.2s linear;
 }
+.wapper{
+    font-family: 'Open Sans', sans-serif;
+    height: 100vh;
+    .slider-container{
+        position: relative;
+        overflow: hidden;
+        width: 100vw;
+        height: 100vh;
 
-.delete{
-    cursor: pointer;   
+        .left-slide{
+            height: 100%;
+            width: 35%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            div{
+                height: 100%;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+                color: #fff;
+                h1{
+                    font-size: 40px;
+                    margin-bottom: 10px;
+                    margin-top: -30px;
+                }
+            }
+        }
+        .right-slide{
+            height: 100%;
+            width: 65%;
+            position: absolute;
+            top: 0;
+            left: 35%;
+            div{
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center center;
+                height: 100%;
+                width: 100%;
+            }
+        }
+        .action-buttons{
+            position: absolute;
+            z-index: 100;
+            top: 50%;
+            left: 35%;
+            .douwn-button{
+                transform: translateX(-100%);
+                -webkit-transform: translateX(-100%);
+                -moz-transform: translateX(-100%);
+                -ms-transform: translateX(-100%);
+                -o-transform: translateX(-100%);
+                border-radius: 5px 0 0 5px;
+                -webkit-border-radius: 5px 0 0 5px;
+                -moz-border-radius: 5px 0 0 5px;
+                -ms-border-radius: 5px 0 0 5px;
+                -o-border-radius: 5px 0 0 5px;
+}
+            .up-button{
+                transform: translate(-110%, -100%);
+                -webkit-transform: translate(-110%, -100%);
+                -moz-transform: translate(-110%, -100%);
+                -ms-transform: translate(-110%, -100%);
+                -o-transform: translate(-110%, -100%);
+                border-radius: 0 5px 5px 0;
+                -webkit-border-radius: 0 5px 5px 0;
+                -moz-border-radius: 0 5px 5px 0;
+                -ms-border-radius: 0 5px 5px 0;
+                -o-border-radius: 0 5px 5px 0;
+}
+}
+    }
+}
+
+button{
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+    color: #aaa;
+    font-size: 16px;
+    padding: 15px;
+    &:hover{
+        color: #222;        
+    }
+    &:focus{
+        outline: none;
+        
+}
 }
